@@ -1,8 +1,11 @@
 defmodule DictionaryTest do
   use ExUnit.Case
-  doctest Dictionary
+  doctest Dictionary.WordList
 
-  test "greets the world" do
-    assert Dictionary.hello() == :world
+  alias Dictionary.WordList
+
+  test "random word" do
+    words = ["One", "Two", "Three"]
+    assert Enum.member?(words, WordList.random_word(words))
   end
 end
